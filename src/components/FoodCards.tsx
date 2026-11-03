@@ -5,7 +5,7 @@ import {
 }from "react-native";
 
 type FoodCardsProps = {
-    name: String;
+    name: string;
     price: number;
     emoji: string;
 };
@@ -16,8 +16,8 @@ export default function FoodCards ({
     emoji,
 }:FoodCardsProps){
     return(
-    <View className="mb-5 w-[48] rounded-2xl bg-orange-50 p-4">
-        <Text className="text-center text-6xl">
+    <View className="mb-5 w-[48%] rounded-2xl bg-orange-50 p-4">
+        <Text className="text-center text-6xl" style={{ lineHeight: 76 }}>
             {emoji}
         </Text>
 
@@ -28,7 +28,7 @@ export default function FoodCards ({
         <Text className="mt-1 font-bold text-orange-500">
             R$ {price.toFixed(2)}
         </Text>
-    <TouchableOpacity className="text-center font-bold text-white">
+    <TouchableOpacity className="mt-4 items-center rounded-xl bg-orange-500 py-3">
         <Text className="text-center font-bold text-white">
             Adicionar
         </Text>

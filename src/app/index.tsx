@@ -11,7 +11,7 @@ export default function HomeScreen() {
     <ScrollView
     className="flex-1 bg-white px-5"
     showsVerticalScrollIndicator={false}>
-  <View className="mb-6 mt -m-4">
+  <View className="mb-6 mt-8">
   <Text className="text-base text-gray-500">
     Olá! 👋
   </Text>
@@ -22,7 +22,7 @@ export default function HomeScreen() {
 </View>
 
 <View className="rounded-3xl bg-orange-500 p-6">
-  <Text className="text-sm-font-bold text-white">
+  <Text className="text-sm font-bold text-white">
     OFERTA ESPECIAL
   </Text>
 
@@ -48,9 +48,9 @@ export default function HomeScreen() {
 
 <View className="flex-row justify-between">
 
-<TouchableOpacity className="w[30%] items-center rounded-2x1 bg-orange-50 py-50">
+<TouchableOpacity className="w-[30%] items-center rounded-2xl bg-orange-50 py-4">
 
-<Text className="text-4x1">
+<Text className="text-4xl">
   🍔
 </Text>
 
@@ -60,9 +60,9 @@ export default function HomeScreen() {
 
 </TouchableOpacity>
 
-<TouchableOpacity className="w[30%] items-center rounded-2x1 bg-orange-50 py-50">
+<TouchableOpacity className="w-[30%] items-center rounded-2xl bg-orange-50 py-4">
 
-<Text className="text-4x1">
+<Text className="text-4xl">
   🍕
 </Text>
 
@@ -72,9 +72,9 @@ export default function HomeScreen() {
 
 </TouchableOpacity>
 
-<TouchableOpacity className="w[30%] items-center rounded-2x1 bg-orange-50 py-50">
+<TouchableOpacity className="w-[30%] items-center rounded-2xl bg-orange-50 py-4">
 
-<Text className="text-4x1">
+<Text className="text-4xl">
   🥤
 </Text>
 
@@ -87,7 +87,21 @@ export default function HomeScreen() {
 
 </View>
 
+<Text className="mb-4 mt-8 text-2xl font-bold">
+  Mais pedidos
+</Text>
+
+<View className="flex-row flex-wrap justify-between">
+  {foods.map((food) => (
+    <FoodCards
+      key={food.id}
+      name={food.name}
+      price={food.price}
+      emoji={food.emoji}
+    />
+  ))}
+</View>
+
 </ScrollView>
   )
 }
-
