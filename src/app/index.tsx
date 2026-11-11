@@ -6,7 +6,9 @@ import {
 } from "react-native";
 import FoodCards from "../components/FoodCards";
 import { foods } from "../constants/foods";
+import { useState } from "react";
 export default function HomeScreen() {
+  const [cartCount, setCartCount] = useState(0);
   return (
     <ScrollView
     className="flex-1 bg-white px-5"
@@ -14,6 +16,9 @@ export default function HomeScreen() {
   <View className="mb-6 mt-8">
   <Text className="text-base text-gray-500">
     Olá! 👋
+  </Text>
+  <Text className="mt-2 text-base font-bold text-orange-500>
+    Itens no carrinho: {cartCount}  
   </Text>
 
   <Text className="mt-1 text-3xl font-bold">
@@ -98,6 +103,7 @@ export default function HomeScreen() {
       name={food.name}
       price={food.price}
       emoji={food.emoji}
+      onAdd={() => setCartCount(cartCount +1)}
     />
   ))}
 </View>
